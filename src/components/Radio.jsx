@@ -4,9 +4,9 @@ import { clsx } from "../utils";
 export function RadioGroup({ id, label, children }) {
   return (
     <fieldset className="flex flex-col gap-2 px-2">
-      <span>
+      <div>
         <legend className="font-bold text-cyan-text-light">{label}</legend>
-      </span>
+      </div>
 
       <div className="grid grid-cols-2 gap-4">
         {Children.map(children, (child) => cloneElement(child, { name: id }))}
