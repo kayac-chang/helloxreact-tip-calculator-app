@@ -57,8 +57,11 @@ export function Radio({ value, name, label, custom, checked }) {
             type="number"
             min="0"
             id="custom-value"
-            name="custom-value"
-            className="text-right font-bold px-4"
+            name="custom"
+            className={clsx(
+              "w-full h-full caret-cyan outline-none focus:ring focus:ring-cyan bg-cyan-lightest rounded",
+              "text-right font-bold px-4"
+            )}
           />
         </span>
       )}

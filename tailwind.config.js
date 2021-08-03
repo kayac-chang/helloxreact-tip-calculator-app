@@ -14,11 +14,13 @@ module.exports = {
 
           DEFAULT: `hsl(172, 67%, 45%)`,
 
+          disabled: `hsl(183, 78%, 24%)`,
           active: `hsl(173, 61%, 77%)`,
 
           light: `hsl(185, 41%, 84%)`,
           lightest: `hsl(189, 41%, 97%)`,
         },
+        red: `hsl(13, 70%, 61%)`,
 
         boxShadow: {
           DEFAULT: `0px 32px 43px rgba(79, 166, 175, 0.200735)`,

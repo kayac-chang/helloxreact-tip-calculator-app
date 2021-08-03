@@ -9,7 +9,3 @@ body {
   @apply bg-cyan-light text-cyan-text;
   font-family: "Space Mono", monospace;
 }
-
-input {
-  @apply w-full h-full caret-cyan outline-none focus:ring focus:ring-cyan bg-cyan-lightest rounded;
-}
