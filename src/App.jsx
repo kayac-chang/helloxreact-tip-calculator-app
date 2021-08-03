@@ -43,7 +43,7 @@ function App() {
   const tipPerPerson = people ? totalTip / people : 0;
 
   // total
-  const totalPerPerson = people ? (bill - totalTip) / people : 0;
+  const totalPerPerson = people ? (bill + totalTip) / people : 0;
 
   // reset
   const canReset = ![
