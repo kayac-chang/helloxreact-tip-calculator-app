@@ -55,7 +55,7 @@ function App() {
 
   return (
     <main className="flex flex-col justify-center items-center min-h-screen">
-      <Header className="md:absolute md:top-20" />
+      <Header className="md:absolute md:top-16" />
 
       <Card className="bg-white flex-1 sm:flex-none rounded-t-3xl sm:rounded-3xl container max-w-4xl">
         <form

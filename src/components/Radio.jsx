@@ -3,10 +3,8 @@ import { clsx } from "../utils";
 
 export function RadioGroup({ id, label, children }) {
   return (
-    <fieldset className="flex flex-col gap-2 px-2">
-      <div>
-        <legend className="font-bold text-cyan-text-light">{label}</legend>
-      </div>
+    <fieldset className="flex flex-col px-2">
+      <legend className="font-bold text-cyan-text-light pb-2">{label}</legend>
 
       <div className="grid grid-cols-2 gap-4">
         {Children.map(children, (child) => cloneElement(child, { name: id }))}
