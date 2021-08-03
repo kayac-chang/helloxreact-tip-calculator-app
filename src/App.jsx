@@ -19,7 +19,7 @@ function clsx(...str) {
 }
 
 function Card({ className, children }) {
-  return <div className={clsx("shadow p-6", className)}>{children}</div>;
+  return <div className={clsx("shadow p-6 sm:p-8", className)}>{children}</div>;
 }
 
 function RadioGroup({ id, label, children }) {
@@ -36,7 +36,7 @@ function RadioGroup({ id, label, children }) {
   );
 }
 
-function InputField({ id, type, label, icon }) {
+function InputField({ id, type, label, value, min, icon }) {
   return (
     <div className="flex flex-col gap-2 px-2">
       <label htmlFor={id} className="font-bold text-cyan-text-light">
@@ -49,7 +49,8 @@ function InputField({ id, type, label, icon }) {
           name={id}
           type={type}
           className="text-2xl font-bold py-2 px-4 text-right"
-          defaultValue="0"
+          defaultValue={value}
+          min={min}
         />
 
         {icon &&
@@ -101,6 +102,7 @@ function Radio({ value, name, label, custom, checked }) {
           <input
             ref={ref}
             type="number"
+            min="0"
             id="custom-value"
             className="text-right font-bold px-4"
           />
@@ -118,7 +120,7 @@ function Data({ label, note, value }) {
         <span className="text-cyan-text-gray text-sm">{note}</span>
       </div>
 
-      <span className="text-cyan text-3xl font-bold">{value}</span>
+      <span className="text-cyan text-3xl sm:text-5xl font-bold">{value}</span>
     </div>
   );
 }
@@ -127,7 +129,7 @@ function Button({ children, type }) {
   return (
     <button
       type={type}
-      className="bg-cyan rounded w-full py-2 text-2xl text-cyan-darkest font-bold "
+      className="bg-cyan rounded py-2 text-2xl text-cyan-darkest font-bold"
     >
       {children}
     </button>
@@ -141,7 +143,14 @@ function App() {
 
       <Card className="bg-white flex-1 sm:flex-none rounded-t-3xl sm:rounded-3xl container max-w-4xl">
         <form className="grid md:grid-flow-col auto-cols-fr gap-8 w-full">
-          <InputField id="bill" label="Bill" type="number" icon={<Dollar />} />
+          <InputField
+            id="bill"
+            label="Bill"
+            type="number"
+            value="0"
+            min="0"
+            icon={<Dollar />}
+          />
 
           <RadioGroup id="tips" label="Select Tip">
             <Radio label="5%" value="5%" checked />
@@ -156,11 +165,13 @@ function App() {
             id="people"
             label="Number of People"
             type="number"
+            value="0"
+            min="0"
             icon={<Person />}
           />
 
-          <Card className="bg-cyan-darkest rounded-2xl flex flex-col justify-between min-h-[15rem] row-span-3">
-            <div className="space-y-6">
+          <Card className="bg-cyan-darkest rounded-2xl flex flex-col justify-between gap-8 pt-8 row-span-3">
+            <div className="space-y-8">
               <Data label="Tip Amount" note="/ person" value="$4.27" />
               <Data label="Total" note="/ person" value="$32.79" />
             </div>
